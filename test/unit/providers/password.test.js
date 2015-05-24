@@ -12,7 +12,7 @@ describe('password provider', function () {
     });
 
     it('successfully attempts', function (done) {
-        var body = JSON.stringify({ username: 'connor4312' });
+        var body = { username: 'connor4312' };
         var stub = sinon.stub(this.client, 'request').returns(Bluebird.resolve({ statusCode: 200, body: body }));
         var client = this.client;
         this.client.auth(provider).then(function () {
